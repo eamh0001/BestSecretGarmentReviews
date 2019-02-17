@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BestSecret Garment Reviews</string>
+    <string name="reviews">Reviews</string>
+    <string name="retrieve_reviews_error">We coudn\'t load the reviews</string>
+    <string name="retrieve_reviewers_error">We coudn\'t load the reviewers</string>
+    <string name="close">Close</string>
+    <string name="retry">Retry</string>
+    <string name="template_price">%.2f €</string>
+    <string name="template_by">By: %s</string>
+    <string name="jean">Jeans</string>
+    <string name="shirt">Shirt</string>
+    <string name="shoes">Shoes</string>
+    <string name="blazer">Blazer</string>
+    <string name="empty" />
+</resources>
