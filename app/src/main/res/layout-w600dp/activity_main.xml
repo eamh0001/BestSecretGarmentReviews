@@ -8,7 +8,7 @@
     android:baselineAligned="false">
 
     <fragment
-        android:name="com.eamh.garmentreviews.ui.reviews.FragmentReviewsList"
+        android:name="com.eamh.garmentreviews.ui.reviews.ReviewsFragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/masterContainer" />

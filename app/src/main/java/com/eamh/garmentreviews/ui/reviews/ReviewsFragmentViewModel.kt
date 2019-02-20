@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
 
-class ReviewsViewModel: ViewModel(), KoinComponent {
+class ReviewsFragmentViewModel: ViewModel(), KoinComponent {
 
     private val repository: Repository by inject()
     val reviewsAdapter: ReviewsAdapter = ReviewsAdapter()

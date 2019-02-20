@@ -1,4 +1,4 @@
-package com.eamh.garmentreviews.ui.reviewdetail
+package com.eamh.garmentreviews.ui.reviewdetail.revieweritem
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -38,7 +38,7 @@ class ReviewersAdapter: RecyclerView.Adapter<ReviewersAdapter.ViewHolder>() {
     class ViewHolder(private val binding: ItemReviewerBinding): RecyclerView.ViewHolder(binding.root){
 
         fun bind(reviewer: Reviewer){
-            binding.viewModel =  ReviewerItemViewModel(reviewer)
+            binding.viewModel = ReviewerItemViewModel(reviewer)
             binding.executePendingBindings()
         }
     }

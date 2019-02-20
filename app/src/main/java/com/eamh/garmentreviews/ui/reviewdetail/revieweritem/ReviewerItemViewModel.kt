@@ -1,4 +1,4 @@
-package com.eamh.garmentreviews.ui.reviewdetail
+package com.eamh.garmentreviews.ui.reviewdetail.revieweritem
 
 import com.eamh.garmentreviews.model.Reviewer
 

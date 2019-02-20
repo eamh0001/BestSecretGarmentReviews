@@ -8,7 +8,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.eamh.garmentreviews.ui.reviews.ReviewsViewModel"/>
+            type="com.eamh.garmentreviews.ui.reviews.ReviewsFragmentViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

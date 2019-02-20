@@ -31,7 +31,7 @@ public class ReviewDetailFragment extends Fragment {
     private FragmentInteractionListener fragmentInteractionListener;
 
     private FragmentReviewDetailBinding binding;
-    private ReviewDetailViewModel viewModel;
+    private ReviewDetailFragmentViewModel viewModel;
 
     public ReviewDetailFragment() {
     }
@@ -86,7 +86,7 @@ public class ReviewDetailFragment extends Fragment {
 
     private void initViewModel(int reviewId){
         ReviewDetailViewModelFactory factory = new ReviewDetailViewModelFactory(reviewId);
-        viewModel = ViewModelProviders.of(this, factory).get(ReviewDetailViewModel.class);
+        viewModel = ViewModelProviders.of(this, factory).get(ReviewDetailFragmentViewModel.class);
         viewModel.getReview().observe(this, new Observer<Review>() {
             @Override
             public void onChanged(Review review) {

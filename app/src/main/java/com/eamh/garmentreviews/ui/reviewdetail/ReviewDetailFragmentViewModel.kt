@@ -5,13 +5,14 @@ import androidx.lifecycle.ViewModel
 import com.eamh.garmentreviews.R
 import com.eamh.garmentreviews.model.Review
 import com.eamh.garmentreviews.repository.Repository
+import com.eamh.garmentreviews.ui.reviewdetail.revieweritem.ReviewersAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
 
-class ReviewDetailViewModel(private val reviewId: Int): ViewModel(), KoinComponent {
+class ReviewDetailFragmentViewModel(private val reviewId: Int): ViewModel(), KoinComponent {
 
     private val repository: Repository by inject()
     private val disposables = CompositeDisposable()

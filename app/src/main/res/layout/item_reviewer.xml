@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.eamh.garmentreviews.ui.reviewdetail.ReviewerItemViewModel"/>
+            type="com.eamh.garmentreviews.ui.reviewdetail.revieweritem.ReviewerItemViewModel"/>
     </data>
 
     <androidx.cardview.widget.CardView

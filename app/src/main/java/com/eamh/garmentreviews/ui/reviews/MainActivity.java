@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity
         extends AppCompatActivity
-        implements FragmentReviewsList.FragmentInteractionListener,
+        implements ReviewsFragment.FragmentInteractionListener,
         ReviewDetailFragment.FragmentInteractionListener {
 
     private boolean isTwoPanelsMode;

@@ -19,17 +19,17 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 
-public class FragmentReviewsList extends Fragment {
+public class ReviewsFragment extends Fragment {
 
     public interface FragmentInteractionListener{
         void onReviewSelected(Review review);
     }
 
     private FragmentReviewsBinding binding;
-    private ReviewsViewModel viewModel;
+    private ReviewsFragmentViewModel viewModel;
     private FragmentInteractionListener fragmentInteractionListener;
 
-    public FragmentReviewsList() {
+    public ReviewsFragment() {
     }
 
     @Override
@@ -57,7 +57,7 @@ public class FragmentReviewsList extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         viewModel =
-                ViewModelProviders.of(this).get(ReviewsViewModel.class);
+                ViewModelProviders.of(this).get(ReviewsFragmentViewModel.class);
 
         viewModel.getSelectedReview().observe(this, new Observer<Review>() {
             @Override
