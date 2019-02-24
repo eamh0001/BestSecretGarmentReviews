@@ -24,7 +24,11 @@
     <style name="textImportantDetail" parent="textTitle">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_big</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@color/textDark</item>
+    </style>
+
+    <style name="textListHeader" parent="textImportantDetail">
+        <item name="android:textColor">@color/textLight</item>
     </style>
 
 </resources>

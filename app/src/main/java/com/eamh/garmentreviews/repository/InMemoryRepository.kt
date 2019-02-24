@@ -5,6 +5,7 @@ import com.eamh.garmentreviews.model.ReviewType
 import com.eamh.garmentreviews.model.Reviewer
 import com.eamh.garmentreviews.model.ReviewerType
 import io.reactivex.Single
+import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
@@ -19,8 +20,6 @@ class InMemoryRepository: Repository {
             reviews[id]?.
                     let { Single.just(it).delay(2, TimeUnit.SECONDS) }
                     ?: Single.error(Throwable("Review doesn't found"))
-
-
 
     private fun createMockReviews(): Map<Int,Review> =
             mutableMapOf<Int,Review>().apply {
@@ -46,8 +45,15 @@ class InMemoryRepository: Repository {
                         "Other seeds may stick to the feet or feathers of birds, and in this way may travel long distances. Seeds of grasses, spores of algae, and the eggs of molluscs and other invertebrates commonly establish in remote areas after long journeys of this sort. The Turdidae have a great ecological importance because some populations migrate long distances and disperse the seeds of endangered plant species at new sites, helping to eliminate inbreeding and increasing the genetic diversity of local flora.",
                 price = Random.nextDouble(10.0, 200.0),
                 picture = computePathFromType(type),
+                date = createMockDate(),
                 reviewers = createMockReviewers ()
         )
+    }
+
+    private fun createMockDate(): Date {
+        val cal = Calendar.getInstance()
+        cal.add(Calendar.MONTH, - Random.nextInt(12))
+        return cal.time // New date
     }
 
     private fun computePathFromType(type: ReviewType): String {

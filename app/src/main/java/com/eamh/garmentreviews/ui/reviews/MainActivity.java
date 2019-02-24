@@ -11,14 +11,11 @@ import com.eamh.garmentreviews.ui.reviewdetail.ReviewDetailFragment;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.test.espresso.idling.CountingIdlingResource;
 
 public class MainActivity
         extends AppCompatActivity
         implements ReviewsFragment.FragmentInteractionListener,
         ReviewDetailFragment.FragmentInteractionListener {
-
-    CountingIdlingResource idlingResource = new CountingIdlingResource("REVIEWS_LOAD");
 
     private boolean isTabletMode;
 

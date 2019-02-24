@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.eamh.garmentreviews.R
 import com.eamh.garmentreviews.model.Review
 import com.eamh.garmentreviews.repository.Repository
-import com.eamh.garmentreviews.ui.reviews.item.ReviewsAdapter
+import com.eamh.garmentreviews.ui.reviews.item.GroupedReviewsAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -16,7 +16,7 @@ import org.koin.standalone.inject
 class ReviewsFragmentViewModel: ViewModel(), KoinComponent {
 
     private val repository: Repository by inject()
-    val reviewsAdapter: ReviewsAdapter = ReviewsAdapter()
+    val reviewsAdapter: GroupedReviewsAdapter = GroupedReviewsAdapter()
     private val disposables = CompositeDisposable()
 
     val showInfoToUser = MutableLiveData<Int>()
