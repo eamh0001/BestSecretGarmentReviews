@@ -15,7 +15,8 @@
 
         <activity
             android:name=".ui.reviews.MainActivity"
-            android:label="@string/reviews">
+            android:label="@string/reviews"
+            android:screenOrientation="behind">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,7 +25,8 @@
 
         <activity
             android:name=".ui.reviewdetail.ReviewDetailActivity"
-            android:parentActivityName=".ui.reviews.MainActivity">
+            android:parentActivityName=".ui.reviews.MainActivity"
+            android:screenOrientation="behind">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.eamh.garmentreviews.ui.reviews.MainActivity" />

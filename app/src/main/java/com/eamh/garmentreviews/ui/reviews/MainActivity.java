@@ -1,6 +1,7 @@
 package com.eamh.garmentreviews.ui.reviews;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import com.eamh.garmentreviews.R;
@@ -10,25 +11,31 @@ import com.eamh.garmentreviews.ui.reviewdetail.ReviewDetailFragment;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.test.espresso.idling.CountingIdlingResource;
 
 public class MainActivity
         extends AppCompatActivity
         implements ReviewsFragment.FragmentInteractionListener,
         ReviewDetailFragment.FragmentInteractionListener {
 
-    private boolean isTwoPanelsMode;
+    CountingIdlingResource idlingResource = new CountingIdlingResource("REVIEWS_LOAD");
+
+    private boolean isTabletMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        isTwoPanelsMode = getResources().getBoolean(R.bool.two_panels);
+        isTabletMode = getResources().getBoolean(R.bool.tablet_mode);
+        if(!isTabletMode){
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
     }
 
     @Override
     public void onReviewSelected(Review review) {
-        if (isTwoPanelsMode){
+        if (isTabletMode){
             setActivityTitle(review.getName());
             createReviewDetailFragment(review);
         }else {

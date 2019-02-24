@@ -5,6 +5,7 @@ import com.eamh.garmentreviews.model.ReviewType
 import com.eamh.garmentreviews.model.Reviewer
 import com.eamh.garmentreviews.model.ReviewerType
 import io.reactivex.Single
+import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
 class InMemoryRepository: Repository {
@@ -12,11 +13,11 @@ class InMemoryRepository: Repository {
     private val reviews: Map<Int,Review> = createMockReviews()
 
     override fun getReviews(): Single<List<Review>> =
-            Single.just(reviews.values.toList())
+            Single.just(reviews.values.toList()).delay(2, TimeUnit.SECONDS)
 
     override fun getReview(id: Int): Single<Review> =
             reviews[id]?.
-                    let { Single.just(it) }
+                    let { Single.just(it).delay(2, TimeUnit.SECONDS) }
                     ?: Single.error(Throwable("Review doesn't found"))
 
 

@@ -1,6 +1,7 @@
 package com.eamh.garmentreviews.ui.reviewdetail;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -21,6 +22,11 @@ public class ReviewDetailActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_detail);
+
+        boolean isTabletMode = getResources().getBoolean(R.bool.tablet_mode);
+        if(!isTabletMode){
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
 
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
