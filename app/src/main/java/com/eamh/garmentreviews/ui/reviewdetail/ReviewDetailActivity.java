@@ -71,6 +71,11 @@ public class ReviewDetailActivity
     }
 
     @Override
+    public void onReviewLoaded(Review review) {
+        setActivityTitle(review.getName());
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
@@ -87,7 +92,7 @@ public class ReviewDetailActivity
     }
 
     @Override
-    public void onReviewLoaded(Review review) {
-        setActivityTitle(review.getName());
+    public void onBackPressed() {
+        navigateUpTo(new Intent(this, MainActivity.class));
     }
 }
